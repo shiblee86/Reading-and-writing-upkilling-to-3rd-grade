@@ -117,6 +117,80 @@ const comp3 = [
   } }
 ];
 
+// ----- LISTENING COMPREHENSION lessons (5 stories, each with 5 questions) -----
+const listen1 = [
+  {
+    learn: "Listen to a short story about Leo at the park.",
+    visual: "🎧🎙️",
+    example: "Click the button to listen. Then answer the questions.",
+    hint: "Listen for details like who, what, where, when.",
+    audioText: "Leo and his dad went to the park. Leo played on the swings for ten minutes. Then he climbed the slide. After that, he ran to the fountain to get a drink of water. His dad sat on a bench and watched him. They stayed at the park until it started to rain.",
+    questions: [
+      { text: "Where did Leo go?", options: ["Beach", "Park", "Library", "Store"], correct: 1 },
+      { text: "What did Leo do FIRST?", options: ["Climbed the slide", "Got a drink of water", "Played on the swings", "Sat on a bench"], correct: 2 },
+      { text: "What did Leo do after climbing the slide?", options: ["Went home", "Played on the swings again", "Ran to the fountain", "Sat with his dad"], correct: 2 },
+      { text: "Where was Leo's dad sitting?", options: ["On the swings", "On the slide", "On a bench", "In the fountain"], correct: 2 },
+      { text: "Why did they leave the park?", options: ["Leo was tired", "It started to rain", "It got dark", "They had to eat dinner"], correct: 1 }
+    ]
+  },
+  {
+    learn: "Listen to a story about Mia's playful cat.",
+    visual: "🎧🐱",
+    example: "Click the button to listen. Then answer the questions.",
+    hint: "Pay attention to colors and actions.",
+    audioText: "Mia's cat, Whiskers, is very playful. Every morning, Whiskers chases a red ball of yarn around the living room. Sometimes she hides behind the sofa and jumps out at Mia's feet. Last week, Whiskers found a mouse in the basement. She didn't chase it. She just watched it run away. Mia thinks Whiskers is getting lazy.",
+    questions: [
+      { text: "What is the cat's name?", options: ["Mia", "Whiskers", "Fluffy", "Red"], correct: 1 },
+      { text: "What color is the ball of yarn?", options: ["Blue", "Red", "Green", "Yellow"], correct: 1 },
+      { text: "Where does Whiskers hide?", options: ["Under the bed", "Behind the sofa", "In the closet", "Under the table"], correct: 1 },
+      { text: "What did Whiskers find in the basement?", options: ["A toy", "A mouse", "A ball", "Food"], correct: 1 },
+      { text: "What did Whiskers do when she saw the mouse?", options: ["Chased it", "Caught it", "Just watched it", "Ran away"], correct: 2 }
+    ]
+  },
+  {
+    learn: "Listen to a story about Safia's treasure box.",
+    visual: "🎧📦",
+    example: "Click the button to listen. Then answer the questions.",
+    hint: "Listen for numbers, colors, and where things came from.",
+    audioText: "Safia has a special box where she keeps her treasures. Inside the box there are three shiny seashells, a yellow feather, and a small green marble. She found the seashells at the beach last summer. The feather came from a parrot at the zoo. The marble was a prize from winning a spelling bee. She only opens the box on Sundays to look at her collection.",
+    questions: [
+      { text: "How many seashells are in the box?", options: ["Two", "Three", "Four", "Five"], correct: 1 },
+      { text: "What color is the feather?", options: ["Blue", "Red", "Yellow", "Green"], correct: 2 },
+      { text: "Where did Safia find the seashells?", options: ["At the zoo", "At the beach", "At school", "From a prize"], correct: 1 },
+      { text: "Where did the feather come from?", options: ["A chicken", "A parrot at the zoo", "A bird in her yard", "A costume"], correct: 1 },
+      { text: "How often does Safia open the box?", options: ["Every day", "On Mondays", "On Sundays", "Once a month"], correct: 2 }
+    ]
+  },
+  {
+    learn: "Listen to a story about a busy bakery.",
+    visual: "🎧🍪",
+    example: "Click the button to listen. Then answer the questions.",
+    hint: "Listen for what the baker does and who helps.",
+    audioText: "Every morning at 5 AM, the baker wakes up to bake bread. She mixes flour, water, and yeast to make dough. While the bread is rising, she starts making cookies. Her daughter helps her put chocolate chips on each cookie. By 7 AM, the bakery is open and customers line up outside. The baker's favorite part is watching people smile when they take their first bite.",
+    questions: [
+      { text: "What time does the baker wake up?", options: ["4 AM", "5 AM", "6 AM", "7 AM"], correct: 1 },
+      { text: "What does the baker make FIRST?", options: ["Cookies", "Cake", "Bread", "Pies"], correct: 2 },
+      { text: "Who helps put chocolate chips on cookies?", options: ["The baker's husband", "The baker's daughter", "The baker's son", "No one"], correct: 1 },
+      { text: "What is the baker's favorite part?", options: ["Making dough", "Opening the shop", "Watching people smile", "Eating cookies"], correct: 2 },
+      { text: "What time does the bakery open?", options: ["5 AM", "6 AM", "7 AM", "8 AM"], correct: 2 }
+    ]
+  },
+  {
+    learn: "Listen to a story about a lost puppy.",
+    visual: "🎧🐕",
+    example: "Click the button to listen. Then answer the questions.",
+    hint: "Listen for who helped and what happened at the end.",
+    audioText: "Max the puppy was playing in the backyard when he saw a squirrel. He chased the squirrel through a hole in the fence. Soon, Max was lost. He wandered for hours. A kind girl named Emma found him shivering under a tree. She gave him water and checked his collar. She called the phone number on the tag. Max's owner came running to pick him up. Emma felt happy that she could help.",
+    questions: [
+      { text: "What did Max chase?", options: ["A cat", "A squirrel", "A bird", "A butterfly"], correct: 1 },
+      { text: "Who found Max?", options: ["A police officer", "A mail carrier", "A girl named Emma", "The park ranger"], correct: 2 },
+      { text: "Where was Max hiding?", options: ["Behind a bush", "Under a tree", "In a dumpster", "By the pond"], correct: 1 },
+      { text: "How did Emma find Max's owner?", options: ["She asked around", "She posted online", "She called the number on the collar", "The owner found them"], correct: 2 },
+      { text: "How did Emma feel at the end?", options: ["Sad", "Angry", "Happy", "Tired"], correct: 2 }
+    ]
+  }
+];
+
 // All categories
 const CATEGORIES = {
   vocab1: { label: '1st Grade Vocabulary', icon: '🔤', grade: 1, lessons: vocab1 },
@@ -127,7 +201,8 @@ const CATEGORIES = {
   comp2: { label: '2nd Grade Comprehension', icon: '📖📖', grade: 2, lessons: comp2 },
   vocab3: { label: '3rd Grade Vocabulary', icon: '🔤✨', grade: 3, lessons: vocab3 },
   seq3: { label: '3rd Grade Sequencing', icon: '📝✨', grade: 3, lessons: seq3 },
-  comp3: { label: '3rd Grade Comprehension', icon: '📖✨', grade: 3, lessons: comp3 }
+  comp3: { label: '3rd Grade Comprehension', icon: '📖✨', grade: 3, lessons: comp3 },
+  listen1: { label: 'Listening Comprehension', icon: '🎧', grade: 3, lessons: listen1 }
 };
 
 // State
@@ -136,6 +211,11 @@ let progress = {};
 let currentCat = '', currentLvl = 1, questions = [], qIdx = 0, correct = 0, wrong = 0, mistakes = [];
 let answered = false, hintCount = 0;
 let lessonData = null;
+
+// Listening-specific state
+let currentAudioPassage = null;
+let currentAudioQuestions = [];
+let currentAudioIndex = 0;
 
 function initProgress() {
   for (let c in CATEGORIES) {
@@ -226,14 +306,52 @@ function openCategory(c) {
   showScreen('levelsScreen');
 }
 
+// Text-to-speech function
+function speakNow(text, button = null) {
+  if (!window.speechSynthesis) {
+    alert("🔊 " + text);
+    return;
+  }
+  
+  window.speechSynthesis.cancel();
+  
+  if (button) {
+    button.classList.add('speaking');
+  }
+  
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.rate = 0.85;
+  utterance.pitch = 1.1;
+  utterance.lang = 'en-US';
+  
+  utterance.onend = () => {
+    if (button) button.classList.remove('speaking');
+  };
+  
+  utterance.onerror = () => {
+    if (button) button.classList.remove('speaking');
+  };
+  
+  window.speechSynthesis.speak(utterance);
+}
+
 function startLesson(cat, lvl) {
+  currentCat = cat;
   currentLvl = lvl;
+  
+  // Check if this is a listening comprehension category
+  if (cat === 'listen1') {
+    startListeningLesson(cat, lvl);
+    return;
+  }
+  
   qIdx = 0;
   correct = 0;
   wrong = 0;
   mistakes = [];
   answered = false;
   hintCount = 0;
+  
   let lessons = CATEGORIES[cat].lessons;
   lessonData = lessons[(lvl - 1) % lessons.length];
   questions = [];
@@ -241,6 +359,25 @@ function startLesson(cat, lvl) {
   document.getElementById('quizLabel').textContent = `${CATEGORIES[cat].label} · lesson ${lvl}`;
   showScreen('quizScreen');
   renderLesson();
+}
+
+function startListeningLesson(cat, lvl) {
+  qIdx = 0;
+  correct = 0;
+  wrong = 0;
+  mistakes = [];
+  answered = false;
+  hintCount = 0;
+  
+  let lessons = CATEGORIES[cat].lessons;
+  lessonData = lessons[(lvl - 1) % lessons.length];
+  currentAudioPassage = lessonData.audioText;
+  currentAudioQuestions = lessonData.questions;
+  currentAudioIndex = 0;
+  
+  document.getElementById('quizLabel').textContent = `${CATEGORIES[cat].label} · lesson ${lvl}`;
+  showScreen('quizScreen');
+  renderListeningLesson();
 }
 
 function renderLesson() {
@@ -256,6 +393,35 @@ function renderLesson() {
     </div>
   `;
   loadQuestion();
+}
+
+function renderListeningLesson() {
+  let visual = lessonData.visual || '🎧';
+  document.getElementById('lessonContainer').innerHTML = `
+    <div class="lesson-card">
+      <div class="lesson-badge">🎧 listen first</div>
+      <div class="lesson-title">${lessonData.learn}</div>
+      <div class="lesson-visual">${visual}</div>
+      <div class="lesson-explanation">✨ ${lessonData.example}</div>
+      <div class="audio-btn" id="listenBtn">🔊 Click to hear the story</div>
+    </div>
+  `;
+  
+  const listenBtn = document.getElementById('listenBtn');
+  if (listenBtn) {
+    listenBtn.onclick = () => speakNow(currentAudioPassage, listenBtn);
+  }
+  
+  const startBtn = document.createElement('button');
+  startBtn.className = 'btn btn-check';
+  startBtn.textContent = '🌸 Start Questions →';
+  startBtn.style.marginTop = '15px';
+  startBtn.style.width = '100%';
+  startBtn.onclick = () => {
+    currentAudioIndex = 0;
+    loadListeningQuestion();
+  };
+  document.getElementById('lessonContainer').appendChild(startBtn);
 }
 
 function loadQuestion() {
@@ -299,6 +465,54 @@ function loadQuestion() {
   });
 }
 
+function loadListeningQuestion() {
+  if (currentAudioIndex >= currentAudioQuestions.length) {
+    showListeningResult();
+    return;
+  }
+  
+  answered = false;
+  const q = currentAudioQuestions[currentAudioIndex];
+  
+  document.getElementById('quizQNum').textContent = `question ${currentAudioIndex + 1}/${currentAudioQuestions.length}`;
+  document.getElementById('qsCorrect').textContent = correct;
+  document.getElementById('qsWrong').textContent = wrong;
+  document.getElementById('progFill').style.width = (currentAudioIndex / currentAudioQuestions.length * 100) + '%';
+  document.getElementById('feedback').className = 'feedback';
+  document.getElementById('checkBtn').style.display = 'inline-flex';
+  document.getElementById('nextBtn').style.display = 'none';
+  document.getElementById('hintBtn').disabled = false;
+  
+  let reListenHtml = `<div class="audio-btn" id="reListenBtn" style="width:100%; margin-bottom:15px;">🔊 Re-listen to the story</div>`;
+  
+  let optsHtml = '<div class="options-grid">';
+  q.options.forEach((opt, i) => {
+    optsHtml += `<button class="opt-btn" data-opt-index="${i}" data-opt-value="${opt}">${opt}</button>`;
+  });
+  optsHtml += '</div>';
+  
+  document.getElementById('questionContainer').innerHTML = `
+    <div class="q-card">
+      <div class="question-text">${q.text}</div>
+      ${reListenHtml}
+      ${optsHtml}
+    </div>
+  `;
+  
+  const reListenBtn = document.getElementById('reListenBtn');
+  if (reListenBtn) {
+    reListenBtn.onclick = () => speakNow(currentAudioPassage, reListenBtn);
+  }
+  
+  document.querySelectorAll('.opt-btn').forEach(btn => {
+    btn.onclick = () => {
+      const idx = parseInt(btn.dataset.optIndex);
+      const val = btn.dataset.optValue;
+      selectListeningOption(idx, val);
+    };
+  });
+}
+
 function selectOption(idx, val) {
   if (answered) return;
   answered = true;
@@ -324,22 +538,70 @@ function selectOption(idx, val) {
   document.getElementById('qsWrong').textContent = wrong;
 }
 
-function checkAnswer() { /* handled by selectOption */ }
+function selectListeningOption(idx, val) {
+  if (answered) return;
+  answered = true;
+  const q = currentAudioQuestions[currentAudioIndex];
+  let isCorrect = (val == q.options[q.correct]);
+  
+  if (isCorrect) {
+    correct++;
+  } else {
+    wrong++;
+    mistakes.push({ q: q.text, exp: `correct answer: ${q.options[q.correct]}` });
+  }
+  
+  let btns = document.querySelectorAll('.opt-btn');
+  btns.forEach((btn, i) => {
+    btn.disabled = true;
+    if (btn.innerText == q.options[q.correct]) btn.classList.add('correct');
+    else if (i === idx && !isCorrect) btn.classList.add('wrong');
+  });
+  
+  let fb = document.getElementById('feedback');
+  fb.textContent = isCorrect ? '✅ Correct! Good listening!' : `❌ The correct answer is: ${q.options[q.correct]}`;
+  fb.className = 'feedback show ' + (isCorrect ? 'ok' : 'bad');
+  
+  document.getElementById('checkBtn').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'inline-flex';
+  document.getElementById('qsCorrect').textContent = correct;
+  document.getElementById('qsWrong').textContent = wrong;
+  
+  const reListenBtn = document.getElementById('reListenBtn');
+  if (reListenBtn) reListenBtn.disabled = true;
+}
+
+function checkAnswer() { /* handled by selectOption/selectListeningOption */ }
 
 function showHint() {
   hintCount++;
   let hintDiv = document.createElement('div');
   hintDiv.className = 'hint-box show';
   hintDiv.style.cssText = 'background:#322b4a;border-radius:40px;padding:15px;margin:10px 0;font-weight:800;border:2px solid #b497d6;color:#e0d2ff;';
-  hintDiv.textContent = '💡 ' + (lessonData.hint || 'think carefully');
+  
+  if (currentCat === 'listen1') {
+    hintDiv.textContent = '💡 ' + (lessonData.hint || 'Listen carefully for details like who, what, where, and when.');
+  } else {
+    hintDiv.textContent = '💡 ' + (lessonData.hint || 'think carefully');
+  }
+  
   document.getElementById('questionContainer').after(hintDiv);
   document.getElementById('hintBtn').disabled = true;
 }
 
 function nextQuestion() {
-  qIdx++;
-  if (qIdx < questions.length) loadQuestion();
-  else showResult();
+  if (currentCat === 'listen1') {
+    currentAudioIndex++;
+    if (currentAudioIndex < currentAudioQuestions.length) {
+      loadListeningQuestion();
+    } else {
+      showListeningResult();
+    }
+  } else {
+    qIdx++;
+    if (qIdx < questions.length) loadQuestion();
+    else showResult();
+  }
 }
 
 function showResult() {
@@ -356,7 +618,8 @@ function showResult() {
   document.getElementById('resStars').innerHTML = '⭐'.repeat(stars);
   document.getElementById('resMsg').textContent = `you got ${correct} out of ${total} correct. ${passed ? 'lesson passed!' : 'try again to earn stars'}`;
   let ms = document.getElementById('mistakeSection');
-  ms.innerHTML = mistakes.length ? '<div style="font-weight:900;margin-bottom:8px;color:#d9b8ff;">📝 keep practicing:</div>' + mistakes.map(m => `<div class="mistake-item">❓ ${m.q}<br>💡 ${m.exp}</div>`).join('') : '';
+  ms.innerHTML = mistakes.length ? '<div style="font-weight:900;margin-bottom:8px;color:#d9b8ff;">📝 keep practicing:</div>' + 
+    mistakes.map(m => `<div class="mistake-item">❓ ${m.q}<br>💡 ${m.exp}</div>`).join('') : '';
   document.getElementById('retryBtn').onclick = () => startLesson(currentCat, currentLvl);
   let nb = document.getElementById('nextLvBtn');
   if (passed && currentLvl < 5) {
@@ -366,33 +629,58 @@ function showResult() {
   showScreen('resultScreen');
 }
 
+function showListeningResult() {
+  let total = currentAudioQuestions.length;
+  let stars = Math.min(3, Math.ceil(correct / 1.5) || 1);
+  let passed = correct >= Math.ceil(total * 0.6);
+  
+  if (passed) {
+    progress[currentCat][currentLvl].done = true;
+    progress[currentCat][currentLvl].stars = Math.max(progress[currentCat][currentLvl].stars || 0, stars);
+  }
+  
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 1, progress })); } catch { }
+  updateSaveLbl();
+  
+  document.getElementById('resEmoji').textContent = stars === 3 ? '🏆' : (stars === 2 ? '🌟' : '⭐');
+  document.getElementById('resStars').innerHTML = '⭐'.repeat(stars);
+  document.getElementById('resMsg').textContent = `you got ${correct} out of ${total} correct. ${passed ? 'lesson passed!' : 'try again to earn stars'}`;
+  
+  let ms = document.getElementById('mistakeSection');
+  ms.innerHTML = mistakes.length ? '<div style="font-weight:900;margin-bottom:8px;color:#d9b8ff;">📝 keep practicing:</div>' + 
+    mistakes.map(m => `<div class="mistake-item">❓ ${m.q}<br>💡 ${m.exp}</div>`).join('') : '';
+  
+  document.getElementById('retryBtn').onclick = () => startLesson(currentCat, currentLvl);
+  
+  let nb = document.getElementById('nextLvBtn');
+  if (passed && currentLvl < 5) {
+    nb.style.display = 'inline-flex';
+    nb.onclick = () => startLesson(currentCat, currentLvl + 1);
+  } else nb.style.display = 'none';
+  
+  showScreen('resultScreen');
+}
+
 function leaveQuiz() {
   if (confirm('leave? progress won\'t be saved')) showHome();
 }
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', function () {
-  // Menu card clicks
   document.querySelectorAll('.menu-card[data-category]').forEach(card => {
     card.addEventListener('click', function () { openCategory(this.dataset.category); });
   });
-
-  // Top bar buttons
+  
   document.getElementById('saveBtn').addEventListener('click', saveProgress);
   document.getElementById('loadBtn').addEventListener('click', loadProgress);
   document.getElementById('loadFile').addEventListener('change', loadFile);
-
-  // Navigation buttons
   document.getElementById('backToHomeBtn').addEventListener('click', showHome);
   document.getElementById('leaveQuizBtn').addEventListener('click', leaveQuiz);
   document.getElementById('homeFromResultBtn').addEventListener('click', showHome);
-
-  // Quiz buttons
   document.getElementById('hintBtn').addEventListener('click', showHint);
   document.getElementById('checkBtn').addEventListener('click', checkAnswer);
   document.getElementById('nextBtn').addEventListener('click', nextQuestion);
-
-  // Initialize
+  
   try {
     let raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
