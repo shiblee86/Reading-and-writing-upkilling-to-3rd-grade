@@ -117,9 +117,10 @@ const comp3 = [
   } }
 ];
 
-// ----- LISTENING COMPREHENSION lessons -----
-const listen1 = [
+// ----- LISTENING COMPREHENSION lessons (each lesson has audio text and 5 questions) -----
+const listen1Lessons = [
   {
+    title: "Leo at the Park",
     learn: "Listen to a short story about Leo at the park.",
     visual: "🎧🎙️",
     example: "Click the button to listen. Then answer the questions.",
@@ -134,11 +135,12 @@ const listen1 = [
     ]
   },
   {
+    title: "Whiskers the Cat",
     learn: "Listen to a story about Mia's playful cat.",
     visual: "🎧🐱",
     example: "Click the button to listen. Then answer the questions.",
     hint: "Pay attention to colors and actions.",
-    audioText: "Mia's cat, Whiskers, is very playful. Every morning, Whiskers chases a red ball of yarn around the living room. Sometimes she hides behind the sofa and jumps out at Mia's feet. Last week, Whiskers found a mouse in the basement. She didn't chase it. She just watched it run away. Mia thinks Whiskers is getting lazy.",
+    audioText: "Mia's cat, Whiskers, is very playful. Every morning, Whiskers chases a red ball of yarn around the living room. Sometimes she hides behind the sofa and jumps out at Mia's feet. Last week, Whiskers found a mouse in the basement. She didn't chase it. She just watched it run away.",
     questions: [
       { text: "What is the cat's name?", options: ["Mia", "Whiskers", "Fluffy", "Red"], correct: 1 },
       { text: "What color is the ball of yarn?", options: ["Blue", "Red", "Green", "Yellow"], correct: 1 },
@@ -148,11 +150,12 @@ const listen1 = [
     ]
   },
   {
+    title: "Safia's Treasure Box",
     learn: "Listen to a story about Safia's treasure box.",
     visual: "🎧📦",
     example: "Click the button to listen. Then answer the questions.",
     hint: "Listen for numbers, colors, and where things came from.",
-    audioText: "Safia has a special box where she keeps her treasures. Inside the box there are three shiny seashells, a yellow feather, and a small green marble. She found the seashells at the beach last summer. The feather came from a parrot at the zoo. The marble was a prize from winning a spelling bee. She only opens the box on Sundays to look at her collection.",
+    audioText: "Safia has a special box where she keeps her treasures. Inside the box there are three shiny seashells, a yellow feather, and a small green marble. She found the seashells at the beach last summer. The feather came from a parrot at the zoo. She only opens the box on Sundays.",
     questions: [
       { text: "How many seashells are in the box?", options: ["Two", "Three", "Four", "Five"], correct: 1 },
       { text: "What color is the feather?", options: ["Blue", "Red", "Yellow", "Green"], correct: 2 },
@@ -162,36 +165,38 @@ const listen1 = [
     ]
   },
   {
+    title: "The Busy Bakery",
     learn: "Listen to a story about a busy bakery.",
     visual: "🎧🍪",
     example: "Click the button to listen. Then answer the questions.",
     hint: "Listen for what the baker does and who helps.",
-    audioText: "Every morning at 5 AM, the baker wakes up to bake bread. She mixes flour, water, and yeast to make dough. While the bread is rising, she starts making cookies. Her daughter helps her put chocolate chips on each cookie. By 7 AM, the bakery is open and customers line up outside. The baker's favorite part is watching people smile when they take their first bite.",
+    audioText: "Every morning at 5 AM, the baker wakes up to bake bread. She mixes flour, water, and yeast. While the bread is rising, she starts making cookies. Her daughter helps put chocolate chips on each cookie. By 7 AM, the bakery is open.",
     questions: [
       { text: "What time does the baker wake up?", options: ["4 AM", "5 AM", "6 AM", "7 AM"], correct: 1 },
       { text: "What does the baker make FIRST?", options: ["Cookies", "Cake", "Bread", "Pies"], correct: 2 },
-      { text: "Who helps put chocolate chips on cookies?", options: ["The baker's husband", "The baker's daughter", "The baker's son", "No one"], correct: 1 },
-      { text: "What is the baker's favorite part?", options: ["Making dough", "Opening the shop", "Watching people smile", "Eating cookies"], correct: 2 },
-      { text: "What time does the bakery open?", options: ["5 AM", "6 AM", "7 AM", "8 AM"], correct: 2 }
+      { text: "Who helps put chocolate chips on cookies?", options: ["Her husband", "Her daughter", "Her son", "No one"], correct: 1 },
+      { text: "What time does the bakery open?", options: ["5 AM", "6 AM", "7 AM", "8 AM"], correct: 2 },
+      { text: "What does the baker make while bread is rising?", options: ["Cake", "Pies", "Cookies", "Muffins"], correct: 2 }
     ]
   },
   {
+    title: "The Lost Puppy",
     learn: "Listen to a story about a lost puppy.",
     visual: "🎧🐕",
     example: "Click the button to listen. Then answer the questions.",
     hint: "Listen for who helped and what happened at the end.",
-    audioText: "Max the puppy was playing in the backyard when he saw a squirrel. He chased the squirrel through a hole in the fence. Soon, Max was lost. He wandered for hours. A kind girl named Emma found him shivering under a tree. She gave him water and checked his collar. She called the phone number on the tag. Max's owner came running to pick him up. Emma felt happy that she could help.",
+    audioText: "Max the puppy was playing in the backyard when he saw a squirrel. He chased the squirrel through a hole in the fence. Soon, Max was lost. A girl named Emma found him shivering under a tree. She called the number on his collar. Max's owner came running to pick him up.",
     questions: [
       { text: "What did Max chase?", options: ["A cat", "A squirrel", "A bird", "A butterfly"], correct: 1 },
-      { text: "Who found Max?", options: ["A police officer", "A mail carrier", "A girl named Emma", "The park ranger"], correct: 2 },
+      { text: "Who found Max?", options: ["A police officer", "A girl named Emma", "The park ranger", "His owner"], correct: 1 },
       { text: "Where was Max hiding?", options: ["Behind a bush", "Under a tree", "In a dumpster", "By the pond"], correct: 1 },
-      { text: "How did Emma find Max's owner?", options: ["She asked around", "She posted online", "She called the number on the collar", "The owner found them"], correct: 2 },
+      { text: "How did Emma find Max's owner?", options: ["She asked around", "She called the number on the collar", "She posted online", "The owner found them"], correct: 1 },
       { text: "How did Emma feel at the end?", options: ["Sad", "Angry", "Happy", "Tired"], correct: 2 }
     ]
   }
 ];
 
-// All categories
+// All categories - FIXED: listen1 now has lessons property pointing to listen1Lessons
 const CATEGORIES = {
   vocab1: { label: '1st Grade Vocabulary', icon: '🔤', grade: 1, lessons: vocab1 },
   seq1: { label: '1st Grade Sequencing', icon: '📝', grade: 1, lessons: seq1 },
@@ -202,11 +207,11 @@ const CATEGORIES = {
   vocab3: { label: '3rd Grade Vocabulary', icon: '🔤✨', grade: 3, lessons: vocab3 },
   seq3: { label: '3rd Grade Sequencing', icon: '📝✨', grade: 3, lessons: seq3 },
   comp3: { label: '3rd Grade Comprehension', icon: '📖✨', grade: 3, lessons: comp3 },
-  listen1: { label: 'Listening Comprehension', icon: '🎧', grade: 3, lessons: listen1 }
+  listen1: { label: 'Listening Comprehension', icon: '🎧', grade: 3, lessons: listen1Lessons }
 };
 
 // State
-const STORAGE_KEY = 'readwrite_v3';
+const STORAGE_KEY = 'readwrite_v4';
 let progress = {};
 let currentCat = '', currentLvl = 1, questions = [], qIdx = 0, correct = 0, wrong = 0, mistakes = [];
 let answered = false, hintCount = 0;
@@ -280,6 +285,7 @@ function updateSaveLbl() {
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
 }
 
 function showHome() {
@@ -314,7 +320,7 @@ function openCategory(c) {
 // Text-to-speech function
 function speakNow(text, button = null) {
   if (!window.speechSynthesis) {
-    alert("🔊 " + text);
+    alert("🔊 Your browser doesn't support speech. The story is: " + text);
     return;
   }
   
