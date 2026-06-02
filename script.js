@@ -117,7 +117,7 @@ const comp3 = [
   } }
 ];
 
-// ----- LISTENING COMPREHENSION lessons (5 stories, each with 5 questions) -----
+// ----- LISTENING COMPREHENSION lessons -----
 const listen1 = [
   {
     learn: "Listen to a short story about Leo at the park.",
@@ -206,7 +206,7 @@ const CATEGORIES = {
 };
 
 // State
-const STORAGE_KEY = 'readwrite_v2';
+const STORAGE_KEY = 'readwrite_v3';
 let progress = {};
 let currentCat = '', currentLvl = 1, questions = [], qIdx = 0, correct = 0, wrong = 0, mistakes = [];
 let answered = false, hintCount = 0;
@@ -288,8 +288,13 @@ function showHome() {
 }
 
 function openCategory(c) {
+  console.log("Opening category:", c);
+  if (!CATEGORIES[c]) {
+    console.error("Category not found:", c);
+    return;
+  }
   currentCat = c;
-  document.getElementById('levelsTitle').textContent = CATEGORIES[c].label + ' — choose lesson';
+  document.getElementById('levelsTitle').innerHTML = CATEGORIES[c].label + ' — choose lesson';
   const grid = document.getElementById('levelsGrid');
   grid.innerHTML = '';
   const emojis = ['🌱', '🌿', '🍃', '🌟', '🏆'];
@@ -300,7 +305,7 @@ function openCategory(c) {
     const btn = document.createElement('button');
     btn.className = 'lv-btn' + (p.done ? ' done' : '');
     btn.innerHTML = `<span class="lv-icon">${emojis[l - 1]}</span>lesson ${l}${p.done ? `<div class="lv-score">⭐ ${p.stars}</div>` : ''}`;
-    btn.onclick = (ll => () => startLesson(c, ll))(l);
+    btn.onclick = (function(ll) { return function() { startLesson(c, ll); }; })(l);
     grid.appendChild(btn);
   }
   showScreen('levelsScreen');
@@ -336,6 +341,7 @@ function speakNow(text, button = null) {
 }
 
 function startLesson(cat, lvl) {
+  console.log("Starting lesson:", cat, lvl);
   currentCat = cat;
   currentLvl = lvl;
   
@@ -353,15 +359,20 @@ function startLesson(cat, lvl) {
   hintCount = 0;
   
   let lessons = CATEGORIES[cat].lessons;
+  if (!lessons || lessons.length === 0) {
+    console.error("No lessons found for category:", cat);
+    return;
+  }
   lessonData = lessons[(lvl - 1) % lessons.length];
   questions = [];
   for (let i = 0; i < 3; i++) questions.push(lessonData.gen());
-  document.getElementById('quizLabel').textContent = `${CATEGORIES[cat].label} · lesson ${lvl}`;
+  document.getElementById('quizLabel').innerHTML = `${CATEGORIES[cat].label} · lesson ${lvl}`;
   showScreen('quizScreen');
   renderLesson();
 }
 
 function startListeningLesson(cat, lvl) {
+  console.log("Starting listening lesson:", cat, lvl);
   qIdx = 0;
   correct = 0;
   wrong = 0;
@@ -370,12 +381,16 @@ function startListeningLesson(cat, lvl) {
   hintCount = 0;
   
   let lessons = CATEGORIES[cat].lessons;
+  if (!lessons || lessons.length === 0) {
+    console.error("No lessons found for listening category:", cat);
+    return;
+  }
   lessonData = lessons[(lvl - 1) % lessons.length];
   currentAudioPassage = lessonData.audioText;
   currentAudioQuestions = lessonData.questions;
   currentAudioIndex = 0;
   
-  document.getElementById('quizLabel').textContent = `${CATEGORIES[cat].label} · lesson ${lvl}`;
+  document.getElementById('quizLabel').innerHTML = `${CATEGORIES[cat].label} · lesson ${lvl}`;
   showScreen('quizScreen');
   renderListeningLesson();
 }
@@ -431,9 +446,9 @@ function loadQuestion() {
   }
   answered = false;
   const q = questions[qIdx];
-  document.getElementById('quizQNum').textContent = `question ${qIdx + 1}/${questions.length}`;
-  document.getElementById('qsCorrect').textContent = correct;
-  document.getElementById('qsWrong').textContent = wrong;
+  document.getElementById('quizQNum').innerHTML = `question ${qIdx + 1}/${questions.length}`;
+  document.getElementById('qsCorrect').innerHTML = correct;
+  document.getElementById('qsWrong').innerHTML = wrong;
   document.getElementById('progFill').style.width = (qIdx / questions.length * 100) + '%';
   document.getElementById('feedback').className = 'feedback';
   document.getElementById('checkBtn').style.display = 'inline-flex';
@@ -474,9 +489,9 @@ function loadListeningQuestion() {
   answered = false;
   const q = currentAudioQuestions[currentAudioIndex];
   
-  document.getElementById('quizQNum').textContent = `question ${currentAudioIndex + 1}/${currentAudioQuestions.length}`;
-  document.getElementById('qsCorrect').textContent = correct;
-  document.getElementById('qsWrong').textContent = wrong;
+  document.getElementById('quizQNum').innerHTML = `question ${currentAudioIndex + 1}/${currentAudioQuestions.length}`;
+  document.getElementById('qsCorrect').innerHTML = correct;
+  document.getElementById('qsWrong').innerHTML = wrong;
   document.getElementById('progFill').style.width = (currentAudioIndex / currentAudioQuestions.length * 100) + '%';
   document.getElementById('feedback').className = 'feedback';
   document.getElementById('checkBtn').style.display = 'inline-flex';
@@ -530,12 +545,12 @@ function selectOption(idx, val) {
     else if (i === idx && !isCorrect) btn.classList.add('wrong');
   });
   let fb = document.getElementById('feedback');
-  fb.textContent = isCorrect ? '✅ correct! ' + (lessonData.hint || '') : '❌ try again – ' + (lessonData.hint || '');
+  fb.innerHTML = isCorrect ? '✅ correct! ' + (lessonData.hint || '') : '❌ try again – ' + (lessonData.hint || '');
   fb.className = 'feedback show ' + (isCorrect ? 'ok' : 'bad');
   document.getElementById('checkBtn').style.display = 'none';
   document.getElementById('nextBtn').style.display = 'inline-flex';
-  document.getElementById('qsCorrect').textContent = correct;
-  document.getElementById('qsWrong').textContent = wrong;
+  document.getElementById('qsCorrect').innerHTML = correct;
+  document.getElementById('qsWrong').innerHTML = wrong;
 }
 
 function selectListeningOption(idx, val) {
@@ -559,13 +574,13 @@ function selectListeningOption(idx, val) {
   });
   
   let fb = document.getElementById('feedback');
-  fb.textContent = isCorrect ? '✅ Correct! Good listening!' : `❌ The correct answer is: ${q.options[q.correct]}`;
+  fb.innerHTML = isCorrect ? '✅ Correct! Good listening!' : `❌ The correct answer is: ${q.options[q.correct]}`;
   fb.className = 'feedback show ' + (isCorrect ? 'ok' : 'bad');
   
   document.getElementById('checkBtn').style.display = 'none';
   document.getElementById('nextBtn').style.display = 'inline-flex';
-  document.getElementById('qsCorrect').textContent = correct;
-  document.getElementById('qsWrong').textContent = wrong;
+  document.getElementById('qsCorrect').innerHTML = correct;
+  document.getElementById('qsWrong').innerHTML = wrong;
   
   const reListenBtn = document.getElementById('reListenBtn');
   if (reListenBtn) reListenBtn.disabled = true;
@@ -580,9 +595,9 @@ function showHint() {
   hintDiv.style.cssText = 'background:#322b4a;border-radius:40px;padding:15px;margin:10px 0;font-weight:800;border:2px solid #b497d6;color:#e0d2ff;';
   
   if (currentCat === 'listen1') {
-    hintDiv.textContent = '💡 ' + (lessonData.hint || 'Listen carefully for details like who, what, where, and when.');
+    hintDiv.innerHTML = '💡 ' + (lessonData.hint || 'Listen carefully for details like who, what, where, and when.');
   } else {
-    hintDiv.textContent = '💡 ' + (lessonData.hint || 'think carefully');
+    hintDiv.innerHTML = '💡 ' + (lessonData.hint || 'think carefully');
   }
   
   document.getElementById('questionContainer').after(hintDiv);
@@ -614,9 +629,9 @@ function showResult() {
   }
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 1, progress })); } catch { }
   updateSaveLbl();
-  document.getElementById('resEmoji').textContent = stars === 3 ? '🏆' : (stars === 2 ? '🌟' : '⭐');
+  document.getElementById('resEmoji').innerHTML = stars === 3 ? '🏆' : (stars === 2 ? '🌟' : '⭐');
   document.getElementById('resStars').innerHTML = '⭐'.repeat(stars);
-  document.getElementById('resMsg').textContent = `you got ${correct} out of ${total} correct. ${passed ? 'lesson passed!' : 'try again to earn stars'}`;
+  document.getElementById('resMsg').innerHTML = `you got ${correct} out of ${total} correct. ${passed ? 'lesson passed!' : 'try again to earn stars'}`;
   let ms = document.getElementById('mistakeSection');
   ms.innerHTML = mistakes.length ? '<div style="font-weight:900;margin-bottom:8px;color:#d9b8ff;">📝 keep practicing:</div>' + 
     mistakes.map(m => `<div class="mistake-item">❓ ${m.q}<br>💡 ${m.exp}</div>`).join('') : '';
@@ -642,9 +657,9 @@ function showListeningResult() {
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 1, progress })); } catch { }
   updateSaveLbl();
   
-  document.getElementById('resEmoji').textContent = stars === 3 ? '🏆' : (stars === 2 ? '🌟' : '⭐');
+  document.getElementById('resEmoji').innerHTML = stars === 3 ? '🏆' : (stars === 2 ? '🌟' : '⭐');
   document.getElementById('resStars').innerHTML = '⭐'.repeat(stars);
-  document.getElementById('resMsg').textContent = `you got ${correct} out of ${total} correct. ${passed ? 'lesson passed!' : 'try again to earn stars'}`;
+  document.getElementById('resMsg').innerHTML = `you got ${correct} out of ${total} correct. ${passed ? 'lesson passed!' : 'try again to earn stars'}`;
   
   let ms = document.getElementById('mistakeSection');
   ms.innerHTML = mistakes.length ? '<div style="font-weight:900;margin-bottom:8px;color:#d9b8ff;">📝 keep practicing:</div>' + 
@@ -667,8 +682,13 @@ function leaveQuiz() {
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', function () {
+  console.log("DOM loaded, setting up event listeners");
+  
   document.querySelectorAll('.menu-card[data-category]').forEach(card => {
-    card.addEventListener('click', function () { openCategory(this.dataset.category); });
+    card.addEventListener('click', function () { 
+      console.log("Menu card clicked:", this.dataset.category);
+      openCategory(this.dataset.category); 
+    });
   });
   
   document.getElementById('saveBtn').addEventListener('click', saveProgress);
