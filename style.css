@@ -525,12 +525,7 @@ body {
   color: #e0d2ff;
 }
 
-/* Responsive */
-@media (max-width: 500px) {
-  .options-grid {
-    grid-template-columns: 1fr;
-
-    /* Listening comprehension */
+/* Listening comprehension audio button */
 .audio-btn {
   background: #4a3a6e;
   border: 3px solid #b497d6;
@@ -548,8 +543,24 @@ body {
   font-weight: bold;
   color: #e0d2ff;
 }
-.audio-btn:active { transform: scale(0.96); }
-.audio-btn.speaking { background: #6b5b99; animation: pulse 0.5s ease-in-out infinite alternate; }
-@keyframes pulse { from { transform: scale(1); } to { transform: scale(1.02); } }
+
+.audio-btn:active {
+  transform: scale(0.96);
+}
+
+.audio-btn.speaking {
+  background: #6b5b99;
+  animation: pulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.02); }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .options-grid {
+    grid-template-columns: 1fr;
   }
 }
