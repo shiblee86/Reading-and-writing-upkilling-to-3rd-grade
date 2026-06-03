@@ -226,7 +226,7 @@ body {
 
 .levels-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 12px;
 }
 
@@ -241,7 +241,7 @@ body {
   box-shadow: 0 7px 0 #0f0b1a;
   cursor: pointer;
   transition: 0.1s;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .lv-btn:hover {
@@ -257,8 +257,15 @@ body {
 }
 
 .lv-icon {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   display: block;
+  margin-bottom: 5px;
+}
+
+.lv-score {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  color: #f9a826;
 }
 
 /* ========== LESSON + QUIZ ========== */
@@ -558,9 +565,35 @@ body {
   to { transform: scale(1.02); }
 }
 
+/* Certificate Screen - Superhero Theme */
+#certScreen .result-card {
+  border: 5px solid #f9a826;
+  background: radial-gradient(circle, #2d2545 0%, #1a1428 100%);
+}
+
+#certScreen .result-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #f9a826;
+  text-shadow: 2px 2px 0 #4a3a6e;
+}
+
+#certScreen .result-stars {
+  font-size: 5rem;
+  color: #f9a826;
+}
+
 /* Responsive */
 @media (max-width: 500px) {
   .options-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .levels-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+  
+  .topbar-title {
+    font-size: 1.2rem;
   }
 }
