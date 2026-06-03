@@ -6,113 +6,113 @@ function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { let j = Math.floo
 
 // ----- VOCABULARY lessons (1st, 2nd, 3rd) -----
 const vocab1 = [
-  { learn: "Words tell us about things. 'Cat' is a furry pet.", visual: "🐱 = cat", example: "The ___ sleeps. (cat/dog)", hint: "it meows", gen: () => {
+  { id: "v1_01", title: "Basic Words", learn: "Words tell us about things. 'Cat' is a furry pet.", visual: "🐱 = cat", example: "The ___ sleeps. (cat/dog)", hint: "it meows", gen: () => {
     let pairs = [["cat", "🐱"], ["dog", "🐶"], ["sun", "☀️"], ["big", "🐘"], ["red", "🔴"]];
     let [word, emoji] = pairs[rnd(0, 4)];
     return { q: `What word means ${emoji}?`, ans: word, opts: shuffle([word, "house", "run", "blue"]) };
   } },
-  { learn: "Opposite words: big/small, happy/sad.", visual: "😊 happy vs 😞 sad", example: "The opposite of 'hot' is ___", hint: "ice is ...", gen: () => {
+  { id: "v1_02", title: "Opposites", learn: "Opposite words: big/small, happy/sad.", visual: "😊 happy vs 😞 sad", example: "The opposite of 'hot' is ___", hint: "ice is ...", gen: () => {
     return { q: `Opposite of 'hot'?`, ans: "cold", opts: shuffle(["cold", "warm", "tall", "fast"]) };
   } },
-  { learn: "Words can be alike: 'happy' and 'glad' mean almost the same.", visual: "😄 happy = glad", example: "Another word for 'big' is ___", hint: "it starts with 'l'", gen: () => {
+  { id: "v1_03", title: "Synonyms", learn: "Words can be alike: 'happy' and 'glad' mean almost the same.", visual: "😄 happy = glad", example: "Another word for 'big' is ___", hint: "it starts with 'l'", gen: () => {
     return { q: `Another word for 'big'?`, ans: "large", opts: shuffle(["large", "small", "tall", "round"]) };
   } },
-  { learn: "Use words to describe: the soft pillow.", visual: "🛏️ soft", example: "The pillow is ___.", hint: "opposite of hard", gen: () => {
+  { id: "v1_04", title: "Describing Words", learn: "Use words to describe: the soft pillow.", visual: "🛏️ soft", example: "The pillow is ___.", hint: "opposite of hard", gen: () => {
     return { q: `The pillow is ___?`, ans: "soft", opts: shuffle(["soft", "hard", "loud", "blue"]) };
   } },
-  { learn: "Action words: run, jump, eat.", visual: "🏃 run", example: "A fish can ___.", hint: "move in water", gen: () => {
+  { id: "v1_05", title: "Action Words", learn: "Action words: run, jump, eat.", visual: "🏃 run", example: "A fish can ___.", hint: "move in water", gen: () => {
     return { q: `A fish can ___?`, ans: "swim", opts: shuffle(["swim", "fly", "run", "jump"]) };
   } }
 ];
 
 const vocab2 = [
-  { learn: "Compound words: sun + flower = sunflower.", visual: "🌻 sunflower", example: "rain + bow = ___", hint: "color in the sky", gen: () => {
+  { id: "v2_01", title: "Compound Words", learn: "Compound words: sun + flower = sunflower.", visual: "🌻 sunflower", example: "rain + bow = ___", hint: "color in the sky", gen: () => {
     return { q: `rain + bow = ___?`, ans: "rainbow", opts: shuffle(["rainbow", "raincoat", "sunbow", "rainfall"]) };
   } },
-  { learn: "Synonyms: words that mean the same. 'happy' and 'joyful'.", visual: "😊 happy = joyful", example: "Another word for 'fast' is ___", hint: "swift", gen: () => {
+  { id: "v2_02", title: "More Synonyms", learn: "Synonyms: words that mean the same. 'happy' and 'joyful'.", visual: "😊 happy = joyful", example: "Another word for 'fast' is ___", hint: "swift", gen: () => {
     return { q: `Another word for 'fast'?`, ans: "quick", opts: shuffle(["quick", "slow", "tall", "short"]) };
   } },
-  { learn: "Antonyms: words that are opposites. 'day' and 'night'.", visual: "☀️ day ↔ 🌙 night", example: "Opposite of 'day'", hint: "when we sleep", gen: () => {
+  { id: "v2_03", title: "More Antonyms", learn: "Antonyms: words that are opposites. 'day' and 'night'.", visual: "☀️ day ↔ 🌙 night", example: "Opposite of 'day'", hint: "when we sleep", gen: () => {
     return { q: `Opposite of 'day'?`, ans: "night", opts: shuffle(["night", "light", "dark", "noon"]) };
   } },
-  { learn: "Homophones: words that sound same but different. 'see' and 'sea'.", visual: "👀 see / 🌊 sea", example: "I ___ with my eyes.", hint: "not the ocean", gen: () => {
+  { id: "v2_04", title: "Homophones", learn: "Homophones: words that sound same but different. 'see' and 'sea'.", visual: "👀 see / 🌊 sea", example: "I ___ with my eyes.", hint: "not the ocean", gen: () => {
     return { q: `I ___ with my eyes.`, ans: "see", opts: shuffle(["see", "sea", "saw", "sees"]) };
   } },
-  { learn: "Context clues: use other words to figure meaning. The 'enormous' elephant was huge.", visual: "🐘 enormous = very big", example: "The 'tiny' mouse was ___", hint: "very small", gen: () => {
+  { id: "v2_05", title: "Context Clues", learn: "Context clues: use other words to figure meaning. The 'enormous' elephant was huge.", visual: "🐘 enormous = very big", example: "The 'tiny' mouse was ___", hint: "very small", gen: () => {
     return { q: `'tiny' means ___?`, ans: "very small", opts: shuffle(["very small", "very big", "fast", "loud"]) };
   } }
 ];
 
 const vocab3 = [
-  { learn: "Synonyms: many words for one meaning. 'said' can be 'whispered', 'shouted'.", visual: "🗣️ said = whispered/shouted", example: "Another word for 'said' quietly is ___", hint: "soft voice", gen: () => {
+  { id: "v3_01", title: "Advanced Synonyms", learn: "Synonyms: many words for one meaning. 'said' can be 'whispered', 'shouted'.", visual: "🗣️ said = whispered/shouted", example: "Another word for 'said' quietly is ___", hint: "soft voice", gen: () => {
     return { q: `Another word for 'said' quietly?`, ans: "whispered", opts: shuffle(["whispered", "shouted", "cried", "laughed"]) };
   } },
-  { learn: "Figurative language: 'time flies' means time passes quickly.", visual: "⏰✈️ time flies", example: "'It's raining cats and dogs' means ___", hint: "heavy rain", gen: () => {
+  { id: "v3_02", title: "Figurative Language", learn: "Figurative language: 'time flies' means time passes quickly.", visual: "⏰✈️ time flies", example: "'It's raining cats and dogs' means ___", hint: "heavy rain", gen: () => {
     return { q: `'raining cats and dogs' means?`, ans: "heavy rain", opts: shuffle(["heavy rain", "sunny", "windy", "snow"]) };
   } },
-  { learn: "Prefixes: 'un-' means not. 'unhappy' means not happy.", visual: "😞 unhappy", example: "'unfair' means ___", hint: "not fair", gen: () => {
+  { id: "v3_03", title: "Prefixes", learn: "Prefixes: 'un-' means not. 'unhappy' means not happy.", visual: "😞 unhappy", example: "'unfair' means ___", hint: "not fair", gen: () => {
     return { q: `'unfair' means?`, ans: "not fair", opts: shuffle(["not fair", "very fair", "fair again", "fair"]) };
   } },
-  { learn: "Suffixes: '-ful' means full of. 'joyful' means full of joy.", visual: "😄 joyful", example: "'hopeful' means ___", hint: "full of hope", gen: () => {
+  { id: "v3_04", title: "Suffixes", learn: "Suffixes: '-ful' means full of. 'joyful' means full of joy.", visual: "😄 joyful", example: "'hopeful' means ___", hint: "full of hope", gen: () => {
     return { q: `'hopeful' means?`, ans: "full of hope", opts: shuffle(["full of hope", "without hope", "hope again", "hoping"]) };
   } },
-  { learn: "Context clues in longer sentences.", visual: "📖", example: "The 'arid' desert had no water.", hint: "dry", gen: () => {
+  { id: "v3_05", title: "Advanced Context", learn: "Context clues in longer sentences.", visual: "📖", example: "The 'arid' desert had no water.", hint: "dry", gen: () => {
     return { q: `'arid' means?`, ans: "very dry", opts: shuffle(["very dry", "wet", "cold", "windy"]) };
   } }
 ];
 
 // ----- SEQUENCING lessons -----
 const seq1 = [
-  { learn: "First, next, last. What happens after?", visual: "🌱 → 🌻 → 🌼", example: "First we plant a seed, next it grows, last it ___.", hint: "blooms", gen: () => {
+  { id: "s1_01", title: "First, Next, Last", learn: "First, next, last. What happens after?", visual: "🌱 → 🌻 → 🌼", example: "First we plant a seed, next it grows, last it ___.", hint: "blooms", gen: () => {
     return { q: `After morning comes ___.`, ans: "afternoon", opts: shuffle(["afternoon", "night", "evening", "morning"]) };
   } },
-  { learn: "Order in a story: beginning, middle, end.", visual: "📖", example: "First we wake up, next we eat breakfast, last we ___.", hint: "go to school", gen: () => {
+  { id: "s1_02", title: "Story Order", learn: "Order in a story: beginning, middle, end.", visual: "📖", example: "First we wake up, next we eat breakfast, last we ___.", hint: "go to school", gen: () => {
     return { q: `After breakfast, we ___.`, ans: "go to school", opts: shuffle(["go to school", "sleep", "eat dinner", "play"]) };
   } }
 ];
 
 const seq2 = [
-  { learn: "Put sentences in order. 1. I put on shoes. 2. I tie them. 3. I walk.", visual: "👟👟", example: "First, put on shoes. Next, tie them. Last, ___.", hint: "walk", gen: () => {
+  { id: "s2_01", title: "Put in Order", learn: "Put sentences in order. 1. I put on shoes. 2. I tie them. 3. I walk.", visual: "👟👟", example: "First, put on shoes. Next, tie them. Last, ___.", hint: "walk", gen: () => {
     return { q: `After tying shoes, you ___.`, ans: "walk", opts: shuffle(["walk", "sleep", "eat", "jump"]) };
   } },
-  { learn: "Story order: beginning, middle, end.", visual: "📘", example: "First, the caterpillar hatches. Next, it eats. Last, it becomes a ___.", hint: "butterfly", gen: () => {
+  { id: "s2_02", title: "Caterpillar Story", learn: "Story order: beginning, middle, end.", visual: "📘", example: "First, the caterpillar hatches. Next, it eats. Last, it becomes a ___.", hint: "butterfly", gen: () => {
     return { q: `What comes last? caterpillar → eats → ___`, ans: "butterfly", opts: shuffle(["butterfly", "egg", "leaf", "cocoon"]) };
   } }
 ];
 
 const seq3 = [
-  { learn: "Logical order: instructions, events.", visual: "🍪 recipe", example: "First, mix ingredients. Next, bake. Last, ___.", hint: "eat", gen: () => {
+  { id: "s3_01", title: "Instructions Order", learn: "Logical order: instructions, events.", visual: "🍪 recipe", example: "First, mix ingredients. Next, bake. Last, ___.", hint: "eat", gen: () => {
     return { q: `After baking cookies, you ___.`, ans: "eat them", opts: shuffle(["eat them", "mix more", "turn off oven", "buy more"]) };
   } },
-  { learn: "Cause and effect: because... then...", visual: "⚡→💡", example: "Because it rained, the ground got ___.", hint: "wet", gen: () => {
+  { id: "s3_02", title: "Cause & Effect", learn: "Cause and effect: because... then...", visual: "⚡→💡", example: "Because it rained, the ground got ___.", hint: "wet", gen: () => {
     return { q: `Because it rained, the ground got ___.`, ans: "wet", opts: shuffle(["wet", "dry", "hot", "cold"]) };
   } }
 ];
 
 // ----- COMPREHENSION lessons -----
 const comp1 = [
-  { learn: "Read a short story. Answer one question.", visual: "🐭", story: "The mouse is small. It likes cheese.", example: "What does the mouse like?", hint: "yellow food", gen: () => {
+  { id: "c1_01", title: "Mouse Story", learn: "Read a short story. Answer one question.", visual: "🐭", story: "The mouse is small. It likes cheese.", example: "What does the mouse like?", hint: "yellow food", gen: () => {
     return { passage: "The mouse is small. It likes cheese.", q: "What does the mouse like?", ans: "cheese", opts: shuffle(["cheese", "cat", "bread", "rice"]) };
   } },
-  { learn: "Find the main idea.", visual: "☀️", story: "The sun is hot. It gives light.", example: "What is this about?", hint: "star", gen: () => {
+  { id: "c1_02", title: "Sun Story", learn: "Find the main idea.", visual: "☀️", story: "The sun is hot. It gives light.", example: "What is this about?", hint: "star", gen: () => {
     return { passage: "The sun is hot. It gives light.", q: "What is this about?", ans: "the sun", opts: shuffle(["the sun", "the moon", "stars", "clouds"]) };
   } }
 ];
 
 const comp2 = [
-  { learn: "Read a short paragraph. Answer who, what, where.", visual: "🏖️", story: "Tom and Sara went to the beach. They built a big sandcastle.", example: "Where did they go?", hint: "sand and water", gen: () => {
+  { id: "c2_01", title: "Beach Day", learn: "Read a short paragraph. Answer who, what, where.", visual: "🏖️", story: "Tom and Sara went to the beach. They built a big sandcastle.", example: "Where did they go?", hint: "sand and water", gen: () => {
     return { passage: "Tom and Sara went to the beach. They built a big sandcastle.", q: "Where did they go?", ans: "beach", opts: shuffle(["beach", "park", "school", "store"]) };
   } },
-  { learn: "Main idea and details.", visual: "📖", story: "Birds build nests in trees. They use twigs and leaves.", example: "What do birds build?", hint: "home", gen: () => {
+  { id: "c2_02", title: "Birds Story", learn: "Main idea and details.", visual: "📖", story: "Birds build nests in trees. They use twigs and leaves.", example: "What do birds build?", hint: "home", gen: () => {
     return { passage: "Birds build nests in trees. They use twigs and leaves.", q: "What do birds build?", ans: "nests", opts: shuffle(["nests", "trees", "twigs", "leaves"]) };
   } }
 ];
 
 const comp3 = [
-  { learn: "Longer passage. Make an inference.", visual: "🧥❄️", story: "Emma put on her warm coat and boots. Snow was falling.", example: "What season is it?", hint: "cold and snow", gen: () => {
+  { id: "c3_01", title: "Winter Story", learn: "Longer passage. Make an inference.", visual: "🧥❄️", story: "Emma put on her warm coat and boots. Snow was falling.", example: "What season is it?", hint: "cold and snow", gen: () => {
     return { passage: "Emma put on her warm coat and boots. Snow was falling.", q: "What season is it?", ans: "winter", opts: shuffle(["winter", "summer", "spring", "fall"]) };
   } },
-  { learn: "Character feelings.", visual: "😢", story: "Lily lost her favorite doll. She looked everywhere but couldn't find it.", example: "How does Lily feel?", hint: "sad", gen: () => {
+  { id: "c3_02", title: "Lily's Doll", learn: "Character feelings.", visual: "😢", story: "Lily lost her favorite doll. She looked everywhere but couldn't find it.", example: "How does Lily feel?", hint: "sad", gen: () => {
     return { passage: "Lily lost her favorite doll. She looked everywhere but couldn't find it.", q: "How does Lily feel?", ans: "sad", opts: shuffle(["sad", "happy", "excited", "scared"]) };
   } }
 ];
@@ -120,6 +120,7 @@ const comp3 = [
 // ----- LISTENING COMPREHENSION lessons (each lesson has audio text and 5 questions) -----
 const listen1Lessons = [
   {
+    id: "l1_01",
     title: "Leo at the Park",
     learn: "Listen to a short story about Leo at the park.",
     visual: "🎧🎙️",
@@ -135,6 +136,7 @@ const listen1Lessons = [
     ]
   },
   {
+    id: "l1_02",
     title: "Whiskers the Cat",
     learn: "Listen to a story about Mia's playful cat.",
     visual: "🎧🐱",
@@ -150,6 +152,7 @@ const listen1Lessons = [
     ]
   },
   {
+    id: "l1_03",
     title: "Safia's Treasure Box",
     learn: "Listen to a story about Safia's treasure box.",
     visual: "🎧📦",
@@ -165,6 +168,7 @@ const listen1Lessons = [
     ]
   },
   {
+    id: "l1_04",
     title: "The Busy Bakery",
     learn: "Listen to a story about a busy bakery.",
     visual: "🎧🍪",
@@ -180,6 +184,7 @@ const listen1Lessons = [
     ]
   },
   {
+    id: "l1_05",
     title: "The Lost Puppy",
     learn: "Listen to a story about a lost puppy.",
     visual: "🎧🐕",
@@ -196,7 +201,7 @@ const listen1Lessons = [
   }
 ];
 
-// All categories - FIXED: listen1 now has lessons property pointing to listen1Lessons
+// All categories
 const CATEGORIES = {
   vocab1: { label: '1st Grade Vocabulary', icon: '🔤', grade: 1, lessons: vocab1 },
   seq1: { label: '1st Grade Sequencing', icon: '📝', grade: 1, lessons: seq1 },
@@ -211,9 +216,9 @@ const CATEGORIES = {
 };
 
 // State
-const STORAGE_KEY = 'readwrite_v4';
+const STORAGE_KEY = 'readwrite_v5';
 let progress = {};
-let currentCat = '', currentLvl = 1, questions = [], qIdx = 0, correct = 0, wrong = 0, mistakes = [];
+let currentCat = '', questions = [], qIdx = 0, correct = 0, wrong = 0, mistakes = [];
 let answered = false, hintCount = 0;
 let lessonData = null;
 
@@ -225,14 +230,12 @@ let currentAudioIndex = 0;
 function initProgress() {
   for (let c in CATEGORIES) {
     if (!progress[c]) progress[c] = {};
-    for (let l = 1; l <= 5; l++) {
-      if (!progress[c][l]) progress[c][l] = { done: false, stars: 0 };
-    }
+    // No need to pre-initialize with level numbers anymore
   }
 }
 
 function saveProgress() {
-  const blob = new Blob([JSON.stringify({ v: 1, progress })], { type: 'application/json' });
+  const blob = new Blob([JSON.stringify({ v: 2, progress })], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = 'readwrite_save.json';
@@ -250,7 +253,7 @@ function loadFile(e) {
   r.onload = ev => {
     try {
       const d = JSON.parse(ev.target.result);
-      if (d && d.v === 1 && d.progress) {
+      if (d && (d.v === 1 || d.v === 2) && d.progress) {
         progress = d.progress;
         initProgress();
         updateSaveLbl();
@@ -264,21 +267,38 @@ function loadFile(e) {
 }
 
 function updateSaveLbl() {
-  let done = 0, total = 0, stars = 0;
+  let totalLessons = 0;
+  let completedLessons = 0;
+  let totalStars = 0;
+
   for (let c in CATEGORIES) {
-    for (let l = 1; l <= 5; l++) {
-      total++;
-      if (progress[c]?.[l]?.done) {
-        done++;
-        stars += progress[c][l].stars || 0;
+    totalLessons += CATEGORIES[c].lessons.length;
+    
+    if (progress[c]) {
+      for (let id in progress[c]) {
+        if (progress[c][id].done) {
+          completedLessons++;
+          totalStars += progress[c][id].stars || 0;
+        }
       }
     }
   }
-  document.getElementById('saveLbl').textContent = done ? `${done}/${total} lessons • ⭐ ${stars}` : '⭐ start';
+
+  document.getElementById('saveLbl').textContent = completedLessons > 0 
+    ? `${completedLessons}/${totalLessons} lessons • ⭐ ${totalStars}` 
+    : '⭐ start';
+
   let chart = document.getElementById('progressChart');
   if (chart) {
-    let pct = Math.round((done / total) * 100) || 0;
-    chart.innerHTML = `<h3 style="color:#d9b8ff;">📊 my reading trail</h3><div class="progress-bar-cont" style="background:#1a1428;border-radius:30px;"><div class="progress-bar-fill" style="width:${pct}%;height:20px;border-radius:30px;background:linear-gradient(90deg,#b497d6,#d9b8ff);"></div></div><div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:15px;color:#e0d2ff;">⭐ ${stars} stars • ${done}/${total} lessons</div>`;
+    let pct = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
+    chart.innerHTML = `
+      <h3 style="color:#d9b8ff;">📊 my reading trail</h3>
+      <div class="progress-bar-cont" style="background:#1a1428;border-radius:30px;">
+        <div class="progress-bar-fill" style="width:${pct}%;height:20px;border-radius:30px;background:linear-gradient(90deg,#b497d6,#d9b8ff);"></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:15px;color:#e0d2ff;">
+        ⭐ ${totalStars} stars • ${completedLessons}/${totalLessons} lessons
+      </div>`;
   }
 }
 
@@ -300,21 +320,36 @@ function openCategory(c) {
     return;
   }
   currentCat = c;
+  const lessons = CATEGORIES[c].lessons;
   document.getElementById('levelsTitle').innerHTML = CATEGORIES[c].label + ' — choose lesson';
   const grid = document.getElementById('levelsGrid');
   grid.innerHTML = '';
-  const emojis = ['🌱', '🌿', '🍃', '🌟', '🏆'];
-  if (!progress[c]) progress[c] = {};
-  for (let l = 1; l <= 5; l++) {
-    if (!progress[c][l]) progress[c][l] = { done: false, stars: 0 };
-    const p = progress[c][l];
-    const btn = document.createElement('button');
-    btn.className = 'lv-btn' + (p.done ? ' done' : '');
-    btn.innerHTML = `<span class="lv-icon">${emojis[l - 1]}</span>lesson ${l}${p.done ? `<div class="lv-score">⭐ ${p.stars}</div>` : ''}`;
-    btn.onclick = (function(ll) { return function() { startLesson(c, ll); }; })(l);
-    grid.appendChild(btn);
-  }
+  
+  // Separate lessons into 'new' and 'completed'
+  let newLessons = lessons.filter(l => !progress[c]?.[l.id]?.done);
+  let doneLessons = lessons.filter(l => progress[c]?.[l.id]?.done);
+
+  // Display 'new' lessons first (randomized)
+  shuffle([...newLessons]).forEach(lesson => {
+    createLessonBtn(c, lesson, false);
+  });
+
+  // Display 'completed' lessons after
+  doneLessons.forEach(lesson => {
+    createLessonBtn(c, lesson, true);
+  });
+
   showScreen('levelsScreen');
+}
+
+function createLessonBtn(cat, lesson, isDone) {
+  const grid = document.getElementById('levelsGrid');
+  const btn = document.createElement('button');
+  btn.className = 'lv-btn' + (isDone ? ' done' : '');
+  const starDisplay = isDone ? `<div class="lv-score">⭐ ${progress[cat][lesson.id].stars}</div>` : '';
+  btn.innerHTML = `<span class="lv-icon">${isDone ? '✅' : '🌱'}</span>${lesson.title || 'Lesson'}${starDisplay}`;
+  btn.onclick = () => startLesson(cat, lesson);
+  grid.appendChild(btn);
 }
 
 // Text-to-speech function
@@ -346,16 +381,10 @@ function speakNow(text, button = null) {
   window.speechSynthesis.speak(utterance);
 }
 
-function startLesson(cat, lvl) {
-  console.log("Starting lesson:", cat, lvl);
+function startLesson(cat, lessonObj) {
+  console.log("Starting lesson:", cat, lessonObj.id);
   currentCat = cat;
-  currentLvl = lvl;
-  
-  // Check if this is a listening comprehension category
-  if (cat === 'listen1') {
-    startListeningLesson(cat, lvl);
-    return;
-  }
+  lessonData = lessonObj;
   
   qIdx = 0;
   correct = 0;
@@ -364,41 +393,34 @@ function startLesson(cat, lvl) {
   answered = false;
   hintCount = 0;
   
-  let lessons = CATEGORIES[cat].lessons;
-  if (!lessons || lessons.length === 0) {
-    console.error("No lessons found for category:", cat);
+  // Check if this is a listening comprehension category
+  if (cat === 'listen1') {
+    startListeningLesson(cat, lessonObj);
     return;
   }
-  lessonData = lessons[(lvl - 1) % lessons.length];
+  
   questions = [];
   for (let i = 0; i < 3; i++) questions.push(lessonData.gen());
-  document.getElementById('quizLabel').innerHTML = `${CATEGORIES[cat].label} · lesson ${lvl}`;
+  document.getElementById('quizLabel').innerHTML = `${CATEGORIES[cat].label} · ${lessonData.title || 'Lesson'}`;
   showScreen('quizScreen');
   renderLesson();
 }
 
-function startListeningLesson(cat, lvl) {
-  console.log("Starting listening lesson:", cat, lvl);
-  qIdx = 0;
-  correct = 0;
-  wrong = 0;
-  mistakes = [];
-  answered = false;
-  hintCount = 0;
-  
-  let lessons = CATEGORIES[cat].lessons;
-  if (!lessons || lessons.length === 0) {
-    console.error("No lessons found for listening category:", cat);
-    return;
-  }
-  lessonData = lessons[(lvl - 1) % lessons.length];
+function startListeningLesson(cat, lessonObj) {
+  console.log("Starting listening lesson:", cat, lessonObj.id);
+  lessonData = lessonObj;
   currentAudioPassage = lessonData.audioText;
   currentAudioQuestions = lessonData.questions;
   currentAudioIndex = 0;
   
-  document.getElementById('quizLabel').innerHTML = `${CATEGORIES[cat].label} · lesson ${lvl}`;
+  document.getElementById('quizLabel').innerHTML = `${CATEGORIES[cat].label} · ${lessonData.title || 'Lesson'}`;
   showScreen('quizScreen');
   renderListeningLesson();
+}
+
+function isCategoryComplete(cat) {
+  const lessons = CATEGORIES[cat].lessons;
+  return lessons.every(l => progress[cat]?.[l.id]?.done === true);
 }
 
 function renderLesson() {
@@ -629,24 +651,55 @@ function showResult() {
   let total = questions.length;
   let stars = Math.min(3, Math.ceil(correct / 1.5) || 1);
   let passed = correct >= 2;
+  
   if (passed) {
-    progress[currentCat][currentLvl].done = true;
-    progress[currentCat][currentLvl].stars = Math.max(progress[currentCat][currentLvl].stars || 0, stars);
+    if (!progress[currentCat]) progress[currentCat] = {};
+    progress[currentCat][lessonData.id] = { 
+      done: true, 
+      stars: Math.max(progress[currentCat][lessonData.id]?.stars || 0, stars) 
+    };
   }
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 1, progress })); } catch { }
+  
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 2, progress })); } catch { }
   updateSaveLbl();
+  
   document.getElementById('resEmoji').innerHTML = stars === 3 ? '🏆' : (stars === 2 ? '🌟' : '⭐');
   document.getElementById('resStars').innerHTML = '⭐'.repeat(stars);
   document.getElementById('resMsg').innerHTML = `you got ${correct} out of ${total} correct. ${passed ? 'lesson passed!' : 'try again to earn stars'}`;
+  
   let ms = document.getElementById('mistakeSection');
   ms.innerHTML = mistakes.length ? '<div style="font-weight:900;margin-bottom:8px;color:#d9b8ff;">📝 keep practicing:</div>' + 
     mistakes.map(m => `<div class="mistake-item">❓ ${m.q}<br>💡 ${m.exp}</div>`).join('') : '';
-  document.getElementById('retryBtn').onclick = () => startLesson(currentCat, currentLvl);
+  
+  document.getElementById('retryBtn').onclick = () => startLesson(currentCat, lessonData);
   let nb = document.getElementById('nextLvBtn');
-  if (passed && currentLvl < 5) {
+  
+  // Show next lesson button if there are unfinished lessons
+  const allLessons = CATEGORIES[currentCat].lessons;
+  const unfinishedLessons = allLessons.filter(l => !progress[currentCat]?.[l.id]?.done);
+  
+  if (passed && unfinishedLessons.length > 0) {
     nb.style.display = 'inline-flex';
-    nb.onclick = () => startLesson(currentCat, currentLvl + 1);
-  } else nb.style.display = 'none';
+    const randomUnfinished = unfinishedLessons[Math.floor(Math.random() * unfinishedLessons.length)];
+    nb.onclick = () => startLesson(currentCat, randomUnfinished);
+  } else {
+    nb.style.display = 'none';
+  }
+  
+  // Check if category is fully complete
+  if (isCategoryComplete(currentCat)) {
+    const heroMessages = [
+      "🦸‍♂️ Fantastic job, Superhero! You've mastered all the missions in this category! 🦸‍♀️",
+      "⚡ Incredible speed! You've leveled up and conquered every challenge here! ⚡",
+      "🏆 Amazing work, Champion! Your reading powers are growing stronger every day! 🏆",
+      "🚀 Hero level unlocked! You've crossed the finish line of this learning adventure! 🚀"
+    ];
+    const randomMsg = heroMessages[Math.floor(Math.random() * heroMessages.length)];
+    document.getElementById('certMsg').innerHTML = randomMsg;
+    showScreen('certScreen');
+    return;
+  }
+  
   showScreen('resultScreen');
 }
 
@@ -656,11 +709,14 @@ function showListeningResult() {
   let passed = correct >= Math.ceil(total * 0.6);
   
   if (passed) {
-    progress[currentCat][currentLvl].done = true;
-    progress[currentCat][currentLvl].stars = Math.max(progress[currentCat][currentLvl].stars || 0, stars);
+    if (!progress[currentCat]) progress[currentCat] = {};
+    progress[currentCat][lessonData.id] = { 
+      done: true, 
+      stars: Math.max(progress[currentCat][lessonData.id]?.stars || 0, stars) 
+    };
   }
   
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 1, progress })); } catch { }
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 2, progress })); } catch { }
   updateSaveLbl();
   
   document.getElementById('resEmoji').innerHTML = stars === 3 ? '🏆' : (stars === 2 ? '🌟' : '⭐');
@@ -671,19 +727,43 @@ function showListeningResult() {
   ms.innerHTML = mistakes.length ? '<div style="font-weight:900;margin-bottom:8px;color:#d9b8ff;">📝 keep practicing:</div>' + 
     mistakes.map(m => `<div class="mistake-item">❓ ${m.q}<br>💡 ${m.exp}</div>`).join('') : '';
   
-  document.getElementById('retryBtn').onclick = () => startLesson(currentCat, currentLvl);
-  
+  document.getElementById('retryBtn').onclick = () => startLesson(currentCat, lessonData);
   let nb = document.getElementById('nextLvBtn');
-  if (passed && currentLvl < 5) {
+  
+  const allLessons = CATEGORIES[currentCat].lessons;
+  const unfinishedLessons = allLessons.filter(l => !progress[currentCat]?.[l.id]?.done);
+  
+  if (passed && unfinishedLessons.length > 0) {
     nb.style.display = 'inline-flex';
-    nb.onclick = () => startLesson(currentCat, currentLvl + 1);
-  } else nb.style.display = 'none';
+    const randomUnfinished = unfinishedLessons[Math.floor(Math.random() * unfinishedLessons.length)];
+    nb.onclick = () => startLesson(currentCat, randomUnfinished);
+  } else {
+    nb.style.display = 'none';
+  }
+  
+  // Check if category is fully complete
+  if (isCategoryComplete(currentCat)) {
+    const heroMessages = [
+      "🦸‍♂️ Fantastic job, Superhero! You've mastered all the missions in this category! 🦸‍♀️",
+      "⚡ Incredible speed! You've leveled up and conquered every challenge here! ⚡",
+      "🏆 Amazing work, Champion! Your reading powers are growing stronger every day! 🏆",
+      "🚀 Hero level unlocked! You've crossed the finish line of this learning adventure! 🚀"
+    ];
+    const randomMsg = heroMessages[Math.floor(Math.random() * heroMessages.length)];
+    document.getElementById('certMsg').innerHTML = randomMsg;
+    showScreen('certScreen');
+    return;
+  }
   
   showScreen('resultScreen');
 }
 
 function leaveQuiz() {
   if (confirm('leave? progress won\'t be saved')) showHome();
+}
+
+function backToHomeFromCert() {
+  showHome();
 }
 
 // Event listeners
@@ -706,12 +786,13 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('hintBtn').addEventListener('click', showHint);
   document.getElementById('checkBtn').addEventListener('click', checkAnswer);
   document.getElementById('nextBtn').addEventListener('click', nextQuestion);
+  document.getElementById('certBackBtn').addEventListener('click', backToHomeFromCert);
   
   try {
     let raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       let d = JSON.parse(raw);
-      if (d.v === 1 && d.progress) progress = d.progress;
+      if ((d.v === 1 || d.v === 2) && d.progress) progress = d.progress;
     }
   } catch { }
   initProgress();
